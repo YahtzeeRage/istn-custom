@@ -5,6 +5,7 @@ import numpy as np
 import cv2
 from io import StringIO
 
+# change these to calculate the variance for a different folder/directory
 dirRoot = "/home/yahiya.hussain001/istn/haehnassignment1_align"
 dirFolders = ['haehnassignment1_e', 'haehnassignment1_i', 'haehnassignment1_u', 'haehnassignment1_s']
 dirSubFolders = ['warpedSource', 'refinedWarpedSource']

@@ -15,9 +15,21 @@ LOSS="$1"
 NAME="$2_$LOSS"
 PATHTODATA="$3"
 
-
+## basically the same as Loss-istn.sh but calls custom-istn-reg.py which is made to output
+    ## .dat files storing the affine matrix transformations used in transforming images
 source activate istn
-python custom-istn-reg.py --config $PATHTODATA/config.json --transformation affine --loss $LOSS --out output/$NAME --model output/$NAME/train/model --test $PATHTODATA/val.csv --test_seg $PATHTODATA/val.seg.csv --train $PATHTODATA/train.csv --train_seg $PATHTODATA/train.seg.csv
+python custom-istn-reg.py \
+ --config $PATHTODATA/config.json \
+ --transformation affine \
+ --loss $LOSS \
+ --out output/$NAME \
+ --model output/$NAME/train/model \
+ --val $PATHTODATA/val.csv \
+ --val_seg $PATHTODATA/val.seg.csv \
+ --test $PATHTODATA/val.csv \
+ --test_seg $PATHTODATA/val.seg.csv \
+ --train $PATHTODATA/train.csv \
+ --train_seg $PATHTODATA/train.seg.csv
 
 #python custom-istn-reg.py --config $PATHTODATA/config.json --transformation affine --loss $LOSS --out output/$NAME --model output/$NAME/train/model --test $PATHTODATA/val.csv --test_seg $PATHTODATA/val.seg.csv 
 

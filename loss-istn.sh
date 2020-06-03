@@ -11,8 +11,8 @@
 #SBATCH --mail-user=yahiya.hussain001@umb.edu
 
 ## $1, $2, and $3 are commandline arguments to the bash script
-## example: ./loss_istn.sh u testRun_u data/synth2d
-## or on gibbs cluster: sbatch loss_istn.sh u testRun_u data/synth2d 
+## example: ./Loss_istn.sh u testRun_u data/synth2d
+## or on gibbs cluster: sbatch Loss_istn.sh u testRun_u data/synth2d 
  
 ## can be s, u, e, or i, for supervised, unsupervised, explicit, or implicit from the ISTN paper respectively
 LOSS="$1"
